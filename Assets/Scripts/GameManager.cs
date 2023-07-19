@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Zenject;
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Inject]
+    [SerializeField] Alarma _alarm;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        LoadGame(_alarm);
+    }
+    private void OnApplicationQuit()
+    {
+        SaveGame(_alarm);
+    }
+    public void SaveGame(Alarma alarm)
+    {
+        SaveSystem.SaveGame(alarm);
+    }
+    public void LoadGame(Alarma alarm)
+    {
+        SaveData data =  SaveSystem.loadSaveData();
+        alarm.hours = data.horus;
+        alarm.minutes = data.minutes;
+        alarm.alarmIsOn = data.alarmIsOn;
     }
 }

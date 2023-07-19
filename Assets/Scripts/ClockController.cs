@@ -52,7 +52,7 @@ public class ClockController : MonoBehaviour
         _currentDateTime = _worldTime.currentTime;
         UpdateArrows();
         UpdateElectrioncClock();
-        yield return new WaitForSecondsRealtime(10);
+        yield return new WaitForSecondsRealtime(sec);
         StartCoroutine(UpdateAllTime(sec));
     }
     #region UpdateArrows

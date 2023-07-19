@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66008defedab0cf40bc396a915832a0f, type: 3}
   m_Name: Alarm
   m_EditorClassIdentifier: 
-  isRingingNow: 0
-  alarmIsOn: 0
-  hours: 9
-  minutes: 19
+  isRingingNow: 1
+  alarmIsOn: 1
+  hours: 10
+  minutes: 49
